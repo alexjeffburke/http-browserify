@@ -1,6 +1,6 @@
 {
-  "name": "http-browserify",
-  "version": "1.7.0",
+  "name": "http-browserify-alexjeffburke",
+  "version": "1.7.0-patch1",
   "description": "http module compatability for browserify",
   "main": "index.js",
   "browserify": "index.js",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/substack/http-browserify.git"
+    "url": "http://github.com/alexjeffburke/http-browserify.git"
   },
   "keywords": [
     "http",
