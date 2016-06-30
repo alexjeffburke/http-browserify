@@ -4,6 +4,7 @@ var Request = require('./lib/request');
 var url = require('url')
 
 http.request = function (params, cb) {
+    xhrHttp = captureXhrHttp();
     if (typeof params === 'string') {
         params = url.parse(params)
     }
@@ -49,7 +50,7 @@ http.get = function (params, cb) {
 http.Agent = function () {};
 http.Agent.defaultMaxSockets = 4;
 
-var xhrHttp = (function () {
+function captureXhrHttp() {
     if (typeof window === 'undefined') {
         throw new Error('no window object present');
     }
@@ -83,7 +84,7 @@ var xhrHttp = (function () {
     else {
         throw new Error('ajax not supported in this browser');
     }
-})();
+};
 
 http.STATUS_CODES = {
     100 : 'Continue',
